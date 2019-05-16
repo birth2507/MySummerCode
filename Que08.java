@@ -7,7 +7,7 @@ public class Que08{
 	Stack stack = new Stack();
 	char start = s.charAt(0), last = s.charAt(s.length()-1);
 	int p = 0;
-	//condition for checking opening and closing bracket in start and last
+	//condition for checking opening and closing bracket at start and in last
 	if((start == '(' || start == '{'|| start == '[') && (last == ')' || last == '}'|| last == ']') ){
 		p = 1;
 	}
