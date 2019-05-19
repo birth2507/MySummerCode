@@ -5,32 +5,29 @@ class Que05{
 		System.out.println("Enter the number of element");
 		int n = sc.nextInt();
 		int[] a = new int[n];
+		 int max = Integer.MAX_VALUE;
 		System.out.println("Enter a sorted array");
-		for(int i=0;i<n;i++){
+		for(int i=0;i<n;i++){                                    // -> n
 			a[i]= sc.nextInt();
 			//System.out.print(a[i] +" ");
 		}
 		Que05 q = new Que05();
-		for(int i=0;i<a.length-1;i++){
-			if(a[i] == a[i+1])
+		int count=0;
+		for(int i=0;i<a.length-1;i++){                           // -> n
+			if(a[i]==a[i+1])
 			{
-				a = q.delete(a,i);
-				i = i - 1;
+				a[i] = max;
+				count++;
 			}
 		}
-		System.out.print("After removing duplicate values, Array is: ");		
-		for(int i=0;i<a.length;i++){
-			System.out.print(a[i] +" ");
+		Arrays.sort(a);                                         // -> (nlogn)       
+		a = Arrays.copyOf(a,a.length-count);                    // -> (n)
+		for(int i=0;i<a.length;i++){                            // ->  (n)
+			System.out.println(a[i]);
 		}
-
-		
-	}
-	public int[] delete(int[] a,int loc){
-		for(int i = loc;i<a.length-1;i++){
-			a[i] = a[i + 1];
-		}
-		a = Arrays.copyOf(a,a.length-1);
-
-		return a;
 	}
 }
+/*
+		Time Complexity = n + n + nlogn + n + n
+				        = O(nlogn)
+*/
