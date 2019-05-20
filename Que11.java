@@ -6,7 +6,7 @@ class Que11{
 		int n = sc.nextInt();
 		int[] a = new int[n];
 		System.out.println("Enter the elements:");
-		for(int i=0;i<n;i++){
+		for(int i=0;i<n;i++){                                                               // -> n
 			a[i] = sc.nextInt();
 		}
 		System.out.println("Enter the number or rotation:");
@@ -27,7 +27,7 @@ class Que11{
 	}
 }
 /*
-	Time complexity = r * (n + n + n)
-					= r * (3n)  (r is also a constant, so)
-					= O(n)
+	Time complexity =n + r * (n + n + n)
+			= n + r * (3n)  (r is also a constant, so)
+			= O(n)
 */
