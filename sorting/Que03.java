@@ -3,8 +3,10 @@ import java.util.*;
 class Que03{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of element");
 		int n = sc.nextInt();
 		int[] a = new int[n];
+		System.out.println("Enter the elements");
 		for(int i =0;i<n;i++)
 			a[i] = sc.nextInt();
 		int x= sc.nextInt();
@@ -21,6 +23,7 @@ class Que03{
 			a[w] = a[i];
 			a[i] = t;
 		}
+		System.out.println("Sortd array according to absolute difference with given value "+x);
 		for(int i =0;i<n;i++)
 			System.out.print(a[i]+" ");
 	}
